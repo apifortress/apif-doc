@@ -3,7 +3,7 @@
 ### Usage
 
 ```
-const apifdoc = require ('apifortress-document')
+const apifdoc = require ('apif-doc')
 apifdoc.renderHTML (json).then (function (html) {
     // use DOC html somehow ...
 })
