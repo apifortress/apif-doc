@@ -1,0 +1,30 @@
+{
+  "name": "apifortress-document",
+  "version": "0.9.0",
+  "description": "Apifortress Report Document",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apifortress/apif-doc.git"
+  },
+  "keywords": [
+    "report",
+    "document",
+    "test",
+    "unit-test"
+  ],
+  "author": "Lorenzo Fontana",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/apifortress/apif-doc/issues"
+  },
+  "homepage": "https://github.com/apifortress/apif-doc#readme"
+}
