@@ -669,6 +669,29 @@
 </style>
 
 
+
+<% if (__docCLI) { %>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+        }
+        .assert-doc-record .item-info .icon {
+            display: none;
+        }
+        .assert-doc-record .item-info .item-meta {
+            float: none;
+            width: auto;
+        }
+        .assert-doc-record .item-info .item-meta .meta-inner {
+            padding: 5px 10px 5px 10px;
+        }
+    </style>
+<% } %>
+
+
 <div id="sheet">
     <div class="head clearfix">
         <div class="prod-head">
@@ -811,7 +834,7 @@
                                                         <i class="fa fa-arrow-down"> </i>
                                                     <% } else if (assertion.action == 'each' || assertion.action == 'while') { %>
                                                         <i class="fa fa-retweet"> </i>
-                                                    <% } else if (assertion.action.contains ('assert-')) { %>
+                                                    <% } else if (assertion.action.indexOf ('assert-') > -1) { %>
                                                         <div class="icon assertion">
                                                             <div class="record-status-icn"></div>
                                                         </div>
