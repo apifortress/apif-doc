@@ -1,6 +1,6 @@
 {
   "name": "apif-doc",
-  "version": "0.9.18",
+  "version": "0.9.21",
   "description": "Apifortress Report Document",
   "main": "index.js",
   "dependencies": {

@@ -869,23 +869,38 @@
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>
+
+                                                <%if (assertion.comment) { %>
+                                                    <div class="extra-body">
+                                                        <%= assertion.comment %>
+                                                    </div>
+                                                <% } %>
                                                 
                                             
                                                 <%if (isHTTP) { %>
                                                 <div class="extra-body">
-                        
+                                                    <%
+                                                        var total       = (assertion.metrics.latency ? assertion.metrics.latency : 0) + (assertion.metrics.fetch ? assertion.metrics.fetch : 0);
+                                                        var percLatency = (total > 0 ? assertion.metrics.latency*100/total : 0);
+                                                        var percFetch   = (total > 0 ? assertion.metrics.latency*100/total : 0);
+                    
+                                                        var backColor 		= (assertion.success) ? '#13a8cc' : '#a02526';
+                                                        var latencyColor 	= (assertion.success) ? '#bacad2' : '#ff7675';
+                                                        var latencyTxtColor = (assertion.success) ? '#8b9fab' : '#ff7675';
+                                                        var statusColor 	= (assertion.success) ? '#00be9c' : '#ff7371';
+                                                    %>
                                                     <div class="http-request-info clearfix">
                                                         <div class="details">
+                                                            
+                                                            <span class="lbl status">STATUS: <span style="color: <%= statusColor %>"><%= assertion.status %></span></span>
                         
-                                                            <span class="lbl status">STATUS: <span style="color: #00be9c">200</span></span>
-                        
-                                                            <span class="lbl" style="color: #8b9fab">Latency: 545ms</span>
-                                                            <span class="lbl" style="color: #13a8cc">Download: 123ms</span>
+                                                            <span class="lbl" style="color: <%= latencyTxtColor %>">Latency: <%= assertion.metrics.latency %>ms</span>
+                                                            <span class="lbl" style="color: <%= backColor %>">Download: <%= assertion.metrics.fetch %>ms</span>
                                                             <span class="fa fa-long-arrow-right arrow"></span>
                                                         </div>
                                                         <div class="chart">
-                                                            <div class="chart-outer" style="background-color: #13a8cc;">
-                                                                <div class="chart-inner" style="background-color: #bacad2;width: 81.5868263473%;"></div>
+                                                            <div class="chart-outer" style="background-color: <%= backColor %>">
+                                                                <div class="chart-inner" style="background-color: <%= latencyColor %>;width: <%= percLatency %>%;"></div>
                                                             </div>
                                                         </div>
                                                     </div>
