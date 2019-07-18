@@ -857,7 +857,7 @@
                                                             </div>
                                                         <% } else { %>
                                                             <div class="lbl"><%= assertion.action %></div>
-                                                            <div class="sub-lbl http-request"><%= assertion.expression %>
+                                                            <div class="sub-lbl"><%= assertion.expression %>
                                                             <%if (assertion.foundValue) { %>
                                                                 - Found: "<%= assertion.foundValue %>"
                                                             <% } %>
@@ -905,6 +905,14 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <% } %>
+
+
+                                                <%if (assertion.extra) { %>
+                                                    <div class="extra-body <%= assertion.success ? 'warning' : 'error' %>">
+                                                        <span>Details:</span>
+                                                        <%= assertion.extra %>
+                                                    </div>
                                                 <% } %>
                         
                                                 <div class="acts-wrapper no-print">

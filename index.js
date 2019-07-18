@@ -6,6 +6,8 @@ const render_document = (json, opts) => {
             json.__docCLI = (opts !== undefined && opts.cli && opts.cli === true);
             ejs.renderFile (__dirname + '/document.ejs', json, {  }, function (err, markup) {
                 if (err) {
+                    if (console)
+                        console.error (err);
                     reject (err);
                     // throw err;
                 } else
